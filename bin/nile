@@ -1,0 +1,42 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+usage() {
+    echo "Usage: $0 <path>"
+}
+
+if [ "$#" -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+# Workaround for lack of -f in macOS readlink.
+# Homebrew coreutils is often more trouble than it's worth.
+expand_path() {
+    pushd "$1" >/dev/null
+    pwd
+    popd >/dev/null
+}
+
+PATH_INPUT="$1"
+PATH_DIR_RELATIVE="$(dirname -- "${PATH_INPUT}")"
+PATH_DIR_ABSOLUTE="$(expand_path "${PATH_DIR_RELATIVE}")"
+PATH_BASE="${PATH_INPUT%.*}"
+PATH_EPUB="${PATH_BASE}.epub"
+PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
+
+trap "rm -rf $PATH_BASE >/dev/null 2>&1" INT TERM EXIT ERR
+
+unzip -d "$PATH_BASE" "$PATH_EPUB" >/dev/null
+
+find "$PATH_BASE" \
+    -iname '*.htm' -o \
+    -iname '*.html' -o \
+    -iname '*.xhtm' -o \
+    -iname '*.xhtml' \
+    -exec sed -i '' -e "y/“”‘’/\"\"''/" "{}" \;
+
+pushd "$PATH_BASE" >/dev/null
+zip -r "$PATH_OUTPUT" . >/dev/null
+popd >/dev/null
