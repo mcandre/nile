@@ -26,7 +26,7 @@ FreeBSD
 
 # REQUIREMENTS
 
-* [bash](https://www.gnu.org/software/bash/) or [zsh](https://www.zsh.org/)
+* `/bin/sh` interpreter implemented with either [bash](https://www.gnu.org/software/bash/) or [zsh](https://www.zsh.org/)
 * [findutils](https://www.gnu.org/software/findutils/)
 * [sed](https://www.gnu.org/software/sed/manual/sed.html)
 * [zip](https://linux.die.net/man/1/zip)

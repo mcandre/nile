@@ -26,8 +26,6 @@ PATH_BASE="${PATH_INPUT%.*}"
 PATH_EPUB="${PATH_BASE}.epub"
 PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
 
-trap "rm -rf $PATH_BASE >/dev/null 2>&1" INT TERM EXIT ERR
-
 unzip -d "$PATH_BASE" "$PATH_EPUB" >/dev/null
 
 find "$PATH_BASE" \
@@ -40,3 +38,5 @@ find "$PATH_BASE" \
 pushd "$PATH_BASE" >/dev/null
 zip -r "$PATH_OUTPUT" . >/dev/null
 popd >/dev/null
+
+rm -rf $PATH_BASE >/dev/null 2>&1
