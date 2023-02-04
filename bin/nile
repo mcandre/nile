@@ -26,17 +26,18 @@ PATH_BASE="${PATH_INPUT%.*}"
 PATH_EPUB="${PATH_BASE}.epub"
 PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
 
-unzip -d "$PATH_BASE" "$PATH_EPUB" >/dev/null
+unzip -od "$PATH_BASE" "$PATH_EPUB" >/dev/null
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
-    -exec sed -i '' -e "y/“”‘’/\"\"''/" "{}" \;
+    -exec sed -i '' -e "s/<html/<?xml version='1.0' encoding='utf-8'?>\n<html/" "{}" \; \
+    -exec sed -i '' -e "s/<meta content.*\\/>/<meta content='http:\\/\\/www.w3.org\\/1999\\/xhtml; charset=utf-8' http-equiv='Content-Type'\\/>/" "{}" \;
 
 pushd "$PATH_BASE" >/dev/null
 zip -r "$PATH_OUTPUT" . >/dev/null
 popd >/dev/null
 
-rm -rf $PATH_BASE >/dev/null 2>&1
+rm -rf "$PATH_BASE" >/dev/null 2>&1

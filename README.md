@@ -14,7 +14,7 @@ shakespeare.normalized.epub
 
 # ABOUT
 
-nile normalizes ebooks. For example, Amazon Kindle ereaders often fail to render smart (double-)quotes and apostrophes properly. These can corrupt the displayed page, interrupting the natural flow of content.
+nile normalizes ebooks. For example, Amazon Kindle ereaders often fail to render smart (double-)quotes, apostrophes, em dashes, and other common Unicode runes properly. These can corrupt the displayed page, interrupting the natural flow of content.
 
 nile converts these problematic runes in **ePUB** books to traditional ASCII double-quotes and ASCII apostrophes, for an easier reading experience.
 
@@ -27,9 +27,14 @@ FreeBSD
 # REQUIREMENTS
 
 * `/bin/sh` interpreter implemented with either [bash](https://www.gnu.org/software/bash/) or [zsh](https://www.zsh.org/)
+* If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * [findutils](https://www.gnu.org/software/findutils/)
 * [sed](https://www.gnu.org/software/sed/manual/sed.html)
 * [zip](https://linux.die.net/man/1/zip)
+
+# PROVISIO
+
+The ebook pages must not contain intensely bizarre oddities, such as a Unicode non-breaking space as a literal rune, or else the ebook may trigger a generic Amazon WhisperSync upload error.
 
 # SEE ALSO
 
