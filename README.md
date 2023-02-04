@@ -29,12 +29,17 @@ FreeBSD
 * `/bin/sh` interpreter implemented with either [bash](https://www.gnu.org/software/bash/) or [zsh](https://www.zsh.org/)
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * [findutils](https://www.gnu.org/software/findutils/)
-* [sed](https://www.gnu.org/software/sed/manual/sed.html)
+* [tidy-html5](https://github.com/htacg/tidy-html5)
+* [xmlstarlet](https://xmlstar.sourceforge.net/)
 * [zip](https://linux.die.net/man/1/zip)
 
-# PROVISIO
+# WARNINGS
 
 The ebook pages must not contain intensely bizarre oddities, such as a Unicode non-breaking space as a literal rune, or else the ebook may trigger a generic Amazon WhisperSync upload error. For example, the .(x)htm(l) files within the ebook will need to be able to render well in macOS Quick Look and Google Chrome, prior to any sanitization with nile.
+
+Some ebooks may present latent glitches, which can trigger when Calibre converting, such as after applying a custom book cover. This is due to oddities in how Calibre processes CSS.
+
+Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, but even that can't account for all possible ebook file corruption. Your mileage may vary.
 
 # SEE ALSO
 

@@ -28,13 +28,52 @@ PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
 
 unzip -od "$PATH_BASE" "$PATH_EPUB" >/dev/null
 
+#
+# Work around unhelpful tidy-html5 exit code semantics
+# by relying on unhelpful UNIX `find` exit code semantics
+#
 find "$PATH_BASE" \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
-    -exec sed -i '' -e "s/<html/<?xml version='1.0' encoding='utf-8'?>\n<html/" "{}" \; \
-    -exec sed -i '' -e "s/<meta content.*\\/>/<meta content='http:\\/\\/www.w3.org\\/1999\\/xhtml; charset=utf-8' http-equiv='Content-Type'\\/>/" "{}" \;
+    -exec tidy -qm -asxhtml --wrap 0 "{}" \;
+
+find "$PATH_BASE" \
+    -iname '*.htm' -o \
+    -iname '*.html' -o \
+    -iname '*.xhtm' -o \
+    -iname '*.xhtml' \
+    -print0 |
+        xargs -0 -n 1 \
+            xml ed \
+                -L \
+                -N xmlns="http://www.w3.org/1999/xhtml" \
+                -d "//nav[@epub:type = \"page-list\"]" \
+
+find "$PATH_BASE" \
+    -iname '*.htm' -o \
+    -iname '*.html' -o \
+    -iname '*.xhtm' -o \
+    -iname '*.xhtml' \
+    -print0 |
+        xargs -0 -n 1 \
+            xml ed \
+                -L \
+                -N xmlns="http://www.w3.org/1999/xhtml" \
+                -d "//*[@hidden = 'hidden']" \
+
+find "$PATH_BASE" \
+    -iname '*.htm' -o \
+    -iname '*.html' -o \
+    -iname '*.xhtm' -o \
+    -iname '*.xhtml' \
+    -print0 |
+        xargs -0 -n 1 \
+            xml ed \
+                -L \
+                -N xmlns="http://www.w3.org/1999/xhtml" \
+                -d "//*[@class = \"hidden_content\"]"
 
 pushd "$PATH_BASE" >/dev/null
 zip -r "$PATH_OUTPUT" . >/dev/null
