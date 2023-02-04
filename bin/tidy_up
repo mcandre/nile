@@ -1,0 +1,17 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+#
+# Work around poor tidy-html5 exit code semantics
+#
+
+TIDY_STATUS=0
+
+tidy "$@" || TIDY_STATUS="$?"
+
+if [ $TIDY_STATUS -eq 1 ]; then
+    exit 0
+fi
+
+exit "$TIDY_STATUS"

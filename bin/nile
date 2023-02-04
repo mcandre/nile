@@ -11,17 +11,9 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-# Workaround for lack of -f in macOS readlink.
-# Homebrew coreutils is often more trouble than it's worth.
-expand_path() {
-    pushd "$1" >/dev/null
-    pwd
-    popd >/dev/null
-}
-
 PATH_INPUT="$1"
 PATH_DIR_RELATIVE="$(dirname -- "${PATH_INPUT}")"
-PATH_DIR_ABSOLUTE="$(expand_path "${PATH_DIR_RELATIVE}")"
+PATH_DIR_ABSOLUTE="$(readlink -f "${PATH_DIR_RELATIVE}")"
 PATH_BASE="${PATH_INPUT%.*}"
 PATH_EPUB="${PATH_BASE}.epub"
 PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
@@ -29,24 +21,8 @@ PATH_OUTPUT="${PATH_DIR_ABSOLUTE}/${PATH_BASE}.normalized.epub"
 unzip -od "$PATH_BASE" "$PATH_EPUB" >/dev/null
 
 #
-# Work around unhelpful tidy-html5 exit code semantics
-# by relying on unhelpful UNIX `find` exit code semantics
-#
-find "$PATH_BASE" \
-    -iname '*.htm' -o \
-    -iname '*.html' -o \
-    -iname '*.xhtm' -o \
-    -iname '*.xhtml' \
-    -exec tidy \
-        -qm \
-        -asxhtml \
-        --wrap 0 \
-        '{}' \
-    \;
-
-#
-# Work around a glaring inability for xmlstarlet to process the
-# practically useless HTML entity `&nbsp;`
+# Preprocess pages with tidy-html5,
+# in order to appease overly strict xmlstarlet.
 #
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -55,9 +31,12 @@ find "$PATH_BASE" \
     -iname '*.xhtml' \
     -print0 |
         xargs -0 -n 1 \
-            sed \
-                -i '' \
-                -e 's/&nbsp;/ /g'
+            tidy_up \
+                -qm \
+                -asxhtml \
+                --show-warnings false \
+                --quote-nbsp false \
+                --wrap 0
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -95,8 +74,5 @@ find "$PATH_BASE" \
                 -N xmlns="http://www.w3.org/1999/xhtml" \
                 -d "//*[@class = 'hidden_content']"
 
-pushd "$PATH_BASE" >/dev/null
-zip -r "$PATH_OUTPUT" . >/dev/null
-popd >/dev/null
-
+sh -c "cd \"$PATH_BASE\" && zip -r \"$PATH_OUTPUT\" . >/dev/null"
 rm -rf "$PATH_BASE" >/dev/null 2>&1

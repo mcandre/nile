@@ -26,12 +26,17 @@ FreeBSD
 
 # REQUIREMENTS
 
-* `/bin/sh` interpreter implemented with either [bash](https://www.gnu.org/software/bash/) or [zsh](https://www.zsh.org/)
+* a POSIXy shell (e.g., `ash`, `bash`, `dash`, `ksh`, `posh`, `sh`, `zsh`, etc.)
+* [coreutils](https://www.gnu.org/software/coreutils/) with a modern `readlink -f` implementation
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * [findutils](https://www.gnu.org/software/findutils/)
 * [tidy-html5](https://github.com/htacg/tidy-html5)
 * [xmlstarlet](https://xmlstar.sourceforge.net/)
 * [zip](https://linux.die.net/man/1/zip)
+
+## macOS
+
+Appled finally added `-f` to `readlink` (and also `-P` to `pwd`) as of macOS 12.3 Monterrey. Earlier editions of macOS can shim this feature by electing to override the system coreutils with those from the Homebrew GNU coreutils formula.
 
 # WARNINGS
 
