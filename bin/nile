@@ -37,7 +37,27 @@ find "$PATH_BASE" \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
-    -exec tidy -qm -asxhtml --wrap 0 "{}" \;
+    -exec tidy \
+        -qm \
+        -asxhtml \
+        --wrap 0 \
+        "{}" \
+    \;
+
+#
+# Work around a glaring inability for xmlstarlet to process the
+# practically useless HTML entity `&nbsp;`
+#
+find "$PATH_BASE" \
+    -iname '*.htm' -o \
+    -iname '*.html' -o \
+    -iname '*.xhtm' -o \
+    -iname '*.xhtml' \
+    -print0 |
+        xargs -0 -n 1 \
+            sed \
+                -i '' \
+                -e "s/&nbsp;/ /g"
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -61,7 +81,7 @@ find "$PATH_BASE" \
             xml ed \
                 -L \
                 -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//*[@hidden = 'hidden']" \
+                -d "//*[@hidden = \"hidden\"]" \
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
