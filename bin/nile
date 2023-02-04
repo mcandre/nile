@@ -41,7 +41,7 @@ find "$PATH_BASE" \
         -qm \
         -asxhtml \
         --wrap 0 \
-        "{}" \
+        '{}' \
     \;
 
 #
@@ -57,7 +57,7 @@ find "$PATH_BASE" \
         xargs -0 -n 1 \
             sed \
                 -i '' \
-                -e "s/&nbsp;/ /g"
+                -e 's/&nbsp;/ /g'
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -69,7 +69,7 @@ find "$PATH_BASE" \
             xml ed \
                 -L \
                 -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//nav[@epub:type = \"page-list\"]" \
+                -d "//nav[@epub:type = 'page-list']" \
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -81,7 +81,7 @@ find "$PATH_BASE" \
             xml ed \
                 -L \
                 -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//*[@hidden = \"hidden\"]" \
+                -d "//*[@hidden = 'hidden']" \
 
 find "$PATH_BASE" \
     -iname '*.htm' -o \
@@ -93,7 +93,7 @@ find "$PATH_BASE" \
             xml ed \
                 -L \
                 -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//*[@class = \"hidden_content\"]"
+                -d "//*[@class = 'hidden_content']"
 
 pushd "$PATH_BASE" >/dev/null
 zip -r "$PATH_OUTPUT" . >/dev/null
