@@ -25,10 +25,12 @@ unzip -od "$PATH_BASE" "$PATH_EPUB" >/dev/null
 # in order to appease overly strict xmlstarlet.
 #
 find "$PATH_BASE" \
+    \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
+    \) \
     -print0 |
         xargs -0 -n 1 \
             tidy_up \
@@ -39,10 +41,12 @@ find "$PATH_BASE" \
                 --wrap 0
 
 find "$PATH_BASE" \
+    \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
+    \) \
     -print0 |
         xargs -0 -n 1 \
             xml ed \
@@ -51,10 +55,12 @@ find "$PATH_BASE" \
                 -d "//nav[@epub:type = 'page-list']" \
 
 find "$PATH_BASE" \
+    \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
+    \) \
     -print0 |
         xargs -0 -n 1 \
             xml ed \
@@ -63,10 +69,12 @@ find "$PATH_BASE" \
                 -d "//*[@hidden = 'hidden']" \
 
 find "$PATH_BASE" \
+    \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
     -iname '*.xhtm' -o \
     -iname '*.xhtml' \
+    \) \
     -print0 |
         xargs -0 -n 1 \
             xml ed \
