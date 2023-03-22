@@ -1,6 +1,6 @@
 # BUILDTIME REQUIREMENTS
 
-* [Go](https://go.dev/) 1.19+ with `go install github.com/mcandre/accio@v0.0.3` and `accio -install`
+* [Go](https://go.dev/) 1.19+ with `go install github.com/mcandre/accio/cmd/accio@v0.0.3` and `accio -install`
 * [coreutils](https://www.gnu.org/software/coreutils/)
 * [Python](https://www.python.org/) 3.11.2+ with `pip[3] install --upgrade pip setuptools` and `pip[3] install -r requirements-dev.txt`
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
