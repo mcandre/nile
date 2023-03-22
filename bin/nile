@@ -32,13 +32,13 @@ find "$PATH_BASE" \
     -iname '*.xhtml' \
     \) \
     -print0 |
-        xargs -0 -n 1 \
-            tidy_up \
-                -qm \
-                -asxhtml \
-                --show-warnings false \
-                --quote-nbsp false \
-                --wrap 0
+    xargs -0 -n 1 \
+        tidy_up \
+        -qm \
+        -asxhtml \
+        --show-warnings false \
+        --quote-nbsp false \
+        --wrap 0
 
 find "$PATH_BASE" \
     \( \
@@ -48,11 +48,11 @@ find "$PATH_BASE" \
     -iname '*.xhtml' \
     \) \
     -print0 |
-        xargs -0 -n 1 \
-            xml ed \
-                -L \
-                -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//nav[@epub:type = 'page-list']" \
+    xargs -0 -n 1 \
+        xml ed \
+        -L \
+        -N xmlns="http://www.w3.org/1999/xhtml" \
+        -d "//nav[@epub:type = 'page-list']"
 
 find "$PATH_BASE" \
     \( \
@@ -62,11 +62,11 @@ find "$PATH_BASE" \
     -iname '*.xhtml' \
     \) \
     -print0 |
-        xargs -0 -n 1 \
-            xml ed \
-                -L \
-                -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//*[@hidden = 'hidden']" \
+    xargs -0 -n 1 \
+        xml ed \
+        -L \
+        -N xmlns="http://www.w3.org/1999/xhtml" \
+        -d "//*[@hidden = 'hidden']"
 
 find "$PATH_BASE" \
     \( \
@@ -76,11 +76,11 @@ find "$PATH_BASE" \
     -iname '*.xhtml' \
     \) \
     -print0 |
-        xargs -0 -n 1 \
-            xml ed \
-                -L \
-                -N xmlns="http://www.w3.org/1999/xhtml" \
-                -d "//*[@class = 'hidden_content']"
+    xargs -0 -n 1 \
+        xml ed \
+        -L \
+        -N xmlns="http://www.w3.org/1999/xhtml" \
+        -d "//*[@class = 'hidden_content']"
 
 sh -c "cd \"$PATH_BASE\" && zip -r \"$PATH_OUTPUT\" . >/dev/null"
 rm -rf "$PATH_BASE" >/dev/null 2>&1

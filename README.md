@@ -20,6 +20,14 @@ nile converts these problematic runes in **ePUB** books to traditional ASCII dou
 
 ![the nile viewed from orbit](nile.jpg)
 
+# WARNINGS
+
+The ebook pages must not contain intensely bizarre oddities, such as a Unicode non-breaking space as a literal rune, or else the ebook may trigger a generic Amazon WhisperSync upload error. For example, the .(x)htm(l) files within the ebook will need to be able to render well in macOS Quick Look and Google Chrome, prior to any sanitization with nile.
+
+Some ebooks may present latent glitches, which can trigger when Calibre converting, such as after applying a custom book cover. This is due to oddities in how Calibre processes CSS.
+
+Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, but even that can't account for all possible ebook file corruption. Your mileage may vary.
+
 # LICENSE
 
 FreeBSD
@@ -38,13 +46,9 @@ FreeBSD
 
 Appled finally added `-f` to `readlink` (and also `-P` to `pwd`) as of macOS 12.3 Monterrey. Earlier editions of macOS can shim this feature by electing to override the system coreutils with those from the Homebrew GNU coreutils formula.
 
-# WARNINGS
+# CONTRIBUTING
 
-The ebook pages must not contain intensely bizarre oddities, such as a Unicode non-breaking space as a literal rune, or else the ebook may trigger a generic Amazon WhisperSync upload error. For example, the .(x)htm(l) files within the ebook will need to be able to render well in macOS Quick Look and Google Chrome, prior to any sanitization with nile.
-
-Some ebooks may present latent glitches, which can trigger when Calibre converting, such as after applying a custom book cover. This is due to oddities in how Calibre processes CSS.
-
-Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, but even that can't account for all possible ebook file corruption. Your mileage may vary.
+For more information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
 # SEE ALSO
 

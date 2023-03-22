@@ -1,0 +1,10 @@
+#!/bin/sh
+unset IFS
+set -euf
+
+SRC="${0%/*}/../bin"
+
+stank "$SRC" |
+    stank -exInterp zsh "$SRC" |
+    grep -v node_modules |
+    xargs shellcheck
