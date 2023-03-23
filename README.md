@@ -34,8 +34,7 @@ FreeBSD
 
 # REQUIREMENTS
 
-* a POSIXy shell (e.g., `ash`, `bash`, `dash`, `ksh`, `posh`, `sh`, `zsh`, etc.)
-* [coreutils](https://www.gnu.org/software/coreutils/) with a modern `readlink -f` implementation
+* a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/), [macOS](https://www.apple.com/macos), [WSL](https://learn.microsoft.com/en-us/windows/wsl/install), etc. **with a modern `readlink -f` implementation
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * [findutils](https://www.gnu.org/software/findutils/)
 * [tidy-html5](https://github.com/htacg/tidy-html5)

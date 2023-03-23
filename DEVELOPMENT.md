@@ -15,11 +15,11 @@
 # AUDIT
 
 ```console
-$ vast iaudit
+$ vast v-audit
 ```
 
 # LINT
 
 ```console
-$ vast [ilint]
+$ vast [v-lint]
 ```

@@ -1,9 +1,0 @@
-#!/bin/sh
-unset IFS
-set -euf
-
-ishfmt
-ibashate
-ishellcheck
-ifunk
-iyamllint

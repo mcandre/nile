@@ -2,7 +2,6 @@
 unset IFS
 set -euf
 
-SRC="${0%/*}/../bin"
-
-stank "$SRC" |
+stank -exInterp zsh . |
+    grep -v node_modules |
     xargs shfmt -w -i 4
