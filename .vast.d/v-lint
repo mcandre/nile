@@ -7,4 +7,5 @@ v-bashate
 v-shellcheck
 v-shfmt
 v-funk
+v-slick
 v-yamllint
