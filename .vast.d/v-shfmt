@@ -4,4 +4,4 @@ set -euf
 
 stank -exInterp zsh . |
     grep -v node_modules |
-    xargs shfmt -w -i 4
+    xargs -n 1 shfmt -w -i 4

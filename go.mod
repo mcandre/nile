@@ -1,3 +1,3 @@
 module github.com/mcandre/ji
 
-go 1.17
+go 1.20

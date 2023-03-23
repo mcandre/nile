@@ -34,16 +34,13 @@ FreeBSD
 
 # REQUIREMENTS
 
-* a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/), [macOS](https://www.apple.com/macos), [WSL](https://learn.microsoft.com/en-us/windows/wsl/install), etc. **with a modern `readlink -f` implementation
+* a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/) / [macOS](https://www.apple.com/macos) / [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) / etc.
+* `readlink` with `-f` support
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
-* [findutils](https://www.gnu.org/software/findutils/)
+* GNU compatible [findutils](https://www.gnu.org/software/findutils/)
 * [tidy-html5](https://github.com/htacg/tidy-html5)
 * [xmlstarlet](https://xmlstar.sourceforge.net/)
 * [zip](https://linux.die.net/man/1/zip)
-
-## macOS
-
-Appled finally added `-f` to `readlink` (and also `-P` to `pwd`) as of macOS 12.3 Monterrey. Earlier editions of macOS can shim this feature by electing to override the system coreutils with those from the Homebrew GNU coreutils formula.
 
 # CONTRIBUTING
 
