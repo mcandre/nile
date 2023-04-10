@@ -6,7 +6,6 @@ export vast_tasks='
     v-slick
     v-shellcheck
     v-shfmt
-    v-yamllint
     v-lint
     v-safety
     v-audit

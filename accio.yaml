@@ -1,6 +1,0 @@
----
-packages:
-- name: "github.com/mcandre/stank/..."
-  version: "v0.0.24"
-- name: "mvdan.cc/sh/v3/cmd/shfmt"
-  version: "latest"

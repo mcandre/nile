@@ -9,8 +9,9 @@
 * [zip](https://linux.die.net/man/1/zip)
 * [vast](http://github.com/mcandre/vast) 0.0.1
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
-* [Go](https://go.dev/) 1.20.2+ with `go install github.com/mcandre/accio/cmd/accio@v0.0.4` and `accio -install`
-* [Python](https://www.python.org/) 3.11.2+ with `pip[3] install --upgrade pip setuptools` and `pip[3] install -r requirements-dev.txt`
+* [Go](https://go.dev/) 1.20.2+
+* [Python](https://www.python.org/) 3.11.2+
+* Provision additional dev tools with `./install`
 
 ## Recommended
 
