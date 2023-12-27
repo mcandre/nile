@@ -1,17 +1,19 @@
 # BUILDTIME REQUIREMENTS
 
 * a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/) / [macOS](https://www.apple.com/macos) / [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) / etc.
+* a POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html) implementation (e.g. GNU make, BSD make, etc.)
 * `readlink` with `-f` support
 * GNU compatible [findutils](https://www.gnu.org/software/findutils/)
 * [GNU grep](https://www.gnu.org/software/grep/)
 * [tidy-html5](https://github.com/htacg/tidy-html5)
 * [xmlstarlet](https://xmlstar.sourceforge.net/)
 * [zip](https://linux.die.net/man/1/zip)
-* [vast](http://github.com/mcandre/vast) 0.0.1
+* [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
+* [buildaloada](http://github.com/mcandre/buildaloada)
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
 * [Go](https://go.dev/) 1.20.2+
 * [Python](https://www.python.org/) 3.11.2+
-* Provision additional dev tools with `./install`
+* Provision additional dev tools with `make -f install.mk`
 
 ## Recommended
 
@@ -22,11 +24,11 @@
 # AUDIT
 
 ```console
-$ vast v-audit
+$ make audit
 ```
 
 # LINT
 
 ```console
-$ vast [v-lint]
+$ make [lint]
 ```
