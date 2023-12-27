@@ -30,7 +30,7 @@ Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, b
 
 # LICENSE
 
-FreeBSD
+BSD-2-Clause
 
 # REQUIREMENTS
 
