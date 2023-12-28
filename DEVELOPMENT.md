@@ -11,8 +11,8 @@
 * [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
 * [buildaloada](http://github.com/mcandre/buildaloada)
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
-* [Go](https://go.dev/) 1.20.2+
-* [Python](https://www.python.org/) 3.11.2+
+* [Go](https://go.dev/) 1.21.5+
+* [Python](https://www.python.org/) 3.12.1+
 * Provision additional dev tools with `make -f install.mk`
 
 ## Recommended
