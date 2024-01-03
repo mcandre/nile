@@ -10,7 +10,8 @@
 	shellcheck \
 	shfmt \
 	slick \
-	unmake
+	unmake \
+	yamllint
 
 all: lint
 
@@ -22,10 +23,12 @@ lint: \
 	shellcheck \
 	shfmt \
 	slick \
-	unmake
+	unmake \
+	yamllint
 
 bashate:
-	stank . | \
+	stank -exInterp zsh . | \
+		grep -v .sample | \
 		xargs -n 1 bashate -i E006
 
 funk:
@@ -36,15 +39,21 @@ safety:
 
 shellcheck:
 	stank -exInterp zsh . | \
+		grep -v .sample | \
 		xargs -n 1 shellcheck
 
 shfmt:
 	stank -exInterp zsh . | \
+		grep -v .sample | \
 		xargs -n 1 shfmt -w -i 4
 
 slick:
 	stank -sh . | \
+		grep -v .sample | \
 		xargs -n 1 slick
 
 unmake:
 	unmake .
+
+yamllint:
+	yamllint -s .yamllint .
