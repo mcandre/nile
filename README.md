@@ -34,12 +34,12 @@ BSD-2-Clause
 
 # REQUIREMENTS
 
-* a UNIX environment with [coreutils](https://www.gnu.org/software/coreutils/) / [base](http://ftp.freebsd.org/pub/FreeBSD/releases/) / [macOS](https://www.apple.com/macos) / [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) / etc.
-* `readlink` with `-f` support
+* GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
+* POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * GNU compatible [findutils](https://www.gnu.org/software/findutils/)
-* [tidy-html5](https://github.com/htacg/tidy-html5)
-* [xmlstarlet](https://xmlstar.sourceforge.net/)
+* [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
+* [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://linux.die.net/man/1/zip)
 
 # CONTRIBUTING
