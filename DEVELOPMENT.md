@@ -13,6 +13,7 @@
 * [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
 * [Go](https://go.dev/) 1.21.5+
 * [Python](https://www.python.org/) 3.12.1+
+* [Rust](https://www.rust-lang.org/) 1.75.0+
 * Provision additional dev tools with `make -f install.mk`
 
 ## Recommended

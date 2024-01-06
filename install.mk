@@ -4,7 +4,7 @@
 	all \
 
 all:
-	cargo install --force unmake@0.0.12
+	cargo install --force unmake@0.0.15
 
 	go install github.com/mcandre/slick/cmd/slick@v0.0.6
 	go install github.com/mcandre/stank/...@v0.0.24
