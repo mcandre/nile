@@ -2,7 +2,6 @@
 
 * POSIX compatible [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* POSIX compatible [grep](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html)
 * [Ghostscript](https://www.ghostscript.com/)
 * [Go](https://go.dev/) 1.21.5+
 * [Python](https://www.python.org/) 3.12.1+
