@@ -24,7 +24,9 @@ unzip -od "$PATH_BASE" "$PATH_EPUB" >/dev/null
 # Preprocess pages with tidy-html5,
 # in order to appease overly strict xmlstarlet.
 #
-find "$PATH_BASE" \
+find \
+    "$PATH_BASE" \
+    -type f \
     \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
@@ -40,7 +42,9 @@ find "$PATH_BASE" \
         --quote-nbsp false \
         --wrap 0
 
-find "$PATH_BASE" \
+find \
+    "$PATH_BASE" \
+    -type f \
     \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
@@ -54,7 +58,9 @@ find "$PATH_BASE" \
         -N xmlns="http://www.w3.org/1999/xhtml" \
         -d "//nav[@epub:type = 'page-list']"
 
-find "$PATH_BASE" \
+find \
+    "$PATH_BASE" \
+    -type f \
     \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
@@ -68,7 +74,9 @@ find "$PATH_BASE" \
         -N xmlns="http://www.w3.org/1999/xhtml" \
         -d "//*[@hidden = 'hidden']"
 
-find "$PATH_BASE" \
+find \
+    "$PATH_BASE" \
+    -type f \
     \( \
     -iname '*.htm' -o \
     -iname '*.html' -o \
@@ -83,4 +91,5 @@ find "$PATH_BASE" \
         -d "//*[@class = 'hidden_content']"
 
 sh -c "cd \"$PATH_BASE\" && zip -r \"$PATH_OUTPUT\" . >/dev/null"
+
 rm -rf "$PATH_BASE" >/dev/null 2>&1
