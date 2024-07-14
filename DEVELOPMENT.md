@@ -3,7 +3,7 @@
 * POSIX compatible [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * [Ghostscript](https://www.ghostscript.com/)
-* [Go](https://go.dev/) 1.21.5+
+* [Go](https://go.dev/) 1.22.5+
 * [Python](https://www.python.org/) 3.12.1+
 * GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
