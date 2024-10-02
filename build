@@ -14,7 +14,6 @@ lint() {
     shellcheck
     shfmt
     slick
-    yamllint
 }
 
 bashate() {
@@ -43,10 +42,6 @@ slick() {
 
 snyk() {
     command snyk test
-}
-
-yamllint() {
-    command yamllint -s .yamllint .
 }
 
 if [ "$#" -eq 0 ]; then
