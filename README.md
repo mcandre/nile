@@ -42,6 +42,14 @@ BSD-2-Clause
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://linux.die.net/man/1/zip)
 
+# INSTALL
+
+Add .../nile/bin to `PATH`.
+
+# UNINSTALL
+
+Remove .../nile/bin from `PATH`.
+
 # CONTRIBUTING
 
 For more information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
