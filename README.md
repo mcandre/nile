@@ -32,9 +32,10 @@ Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, b
 
 BSD-2-Clause
 
-# REQUIREMENTS
+# RUNTIME REQUIREMENTS
 
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
+* [git](https://git-scm.com/) 2.46.1+
 * GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
@@ -44,11 +45,36 @@ BSD-2-Clause
 
 # INSTALL
 
-Add .../nile/bin to `PATH`.
+1. Clone the project to a local directory.
+
+```console
+$ git clone https://github.com/mcandre/tigris.git ~/tigris
+```
+
+2. Add .../tigris/bin to `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+export PATH="$PATH:$HOME/tigris/bin"
+```
 
 # UNINSTALL
 
-Remove .../nile/bin from `PATH`.
+1. Remove .../tigris/bin from `PATH`.
+
+~/.zshrc:
+
+```zsh
+# ...
+```
+
+2. Remove local clone directory.
+
+```console
+$ rm -rf ~/tigris
+```
 
 # CONTRIBUTING
 
