@@ -48,21 +48,21 @@ BSD-2-Clause
 1. Clone the project to a local directory.
 
 ```console
-$ git clone https://github.com/mcandre/tigris.git ~/tigris
+$ git clone https://github.com/mcandre/nile.git ~/nile
 ```
 
-2. Add .../tigris/bin to `PATH`.
+2. Add .../nile/bin to `PATH`.
 
 ~/.zshrc:
 
 ```zsh
 # ...
-export PATH="$PATH:$HOME/tigris/bin"
+export PATH="$PATH:$HOME/nile/bin"
 ```
 
 # UNINSTALL
 
-1. Remove .../tigris/bin from `PATH`.
+1. Remove .../nile/bin from `PATH`.
 
 ~/.zshrc:
 
@@ -73,7 +73,7 @@ export PATH="$PATH:$HOME/tigris/bin"
 2. Remove local clone directory.
 
 ```console
-$ rm -rf ~/tigris
+$ rm -rf ~/nile
 ```
 
 # CONTRIBUTING
