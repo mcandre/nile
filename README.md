@@ -85,3 +85,4 @@ For more information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT
 * [Calibre](https://calibre-ebook.com/), a comprehensive personal ebook library manager
 * [Pandoc](https://pandoc.org/), a file format converter
 * [Sigil](https://sigil-ebook.com/), an ebook editor
+* [tigris](https://github.com/mcandre/tigris), (Kindle) comic archival utilities
