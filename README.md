@@ -35,7 +35,6 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * GNU or BSD [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* [git](https://git-scm.com/) 2.46.1+
 * GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
@@ -45,36 +44,7 @@ BSD-2-Clause
 
 # INSTALL
 
-1. Clone the project to a local directory.
-
-```console
-$ git clone https://github.com/mcandre/nile.git ~/nile
-```
-
-2. Add .../nile/bin to `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-export PATH="$PATH:$HOME/nile/bin"
-```
-
-# UNINSTALL
-
-1. Remove .../nile/bin from `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-```
-
-2. Remove local clone directory.
-
-```console
-$ rm -rf ~/nile
-```
+For more information on installing or uninstalling nile, see [INSTALL.md](INSTALL.md).
 
 # CONTRIBUTING
 

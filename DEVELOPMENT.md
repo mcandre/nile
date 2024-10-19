@@ -20,41 +20,6 @@
 * [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
 * [direnv](https://direnv.net/) 2
 
-# INSTALL
-
-(Adjust git forks, clone URLs, remotes, HEAD pointer, and/or local directory name as needed.)
-
-1. Clone the project to a local directory.
-
-```console
-$ git clone https://github.com/mcandre/nile.git ~/nile
-```
-
-2. Add .../nile/bin to `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-export PATH="$PATH:$HOME/nile/bin"
-```
-
-# UNINSTALL
-
-1. Remove .../nile/bin from `PATH`.
-
-~/.zshrc:
-
-```zsh
-# ...
-```
-
-2. Remove local clone directory.
-
-```console
-$ rm -rf ~/nile
-```
-
 # AUDIT
 
 ```console
