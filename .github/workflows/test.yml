@@ -1,0 +1,12 @@
+---
+name: "Test"
+on: # yamllint disable-line rule:truthy
+  push:
+  pull_request:
+jobs:
+  Test:
+    runs-on: "ubuntu-24.04"
+    steps:
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >> \"$GITHUB_PATH\""
+    - uses: "actions/checkout@v4"
+    - run: "./build"
