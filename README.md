@@ -12,6 +12,8 @@ shakespeare.epub
 shakespeare.normalized.epub
 ```
 
+See `nile -h` for more detail.
+
 # ABOUT
 
 nile normalizes ebooks. For example, Amazon Kindle ereaders often fail to render smart (double-)quotes, apostrophes, em dashes, and other common Unicode runes properly. These can corrupt the displayed page, interrupting the natural flow of content.
