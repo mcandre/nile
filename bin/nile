@@ -2,9 +2,36 @@
 unset IFS
 set -euf
 
+NILE_VERSION='0.0.1'
+
 usage() {
-    echo "Usage: $0 <path>"
+    echo "Usage: $0 [OPTIONS] <path>"
+    echo ""
+    echo "-v\tShow version info"
+    echo "-h\tShow usage menu"
 }
+
+banner() {
+    echo "nile $NILE_VERSION"
+}
+
+while [ "$#" -ge 1 ]; do
+    case "$1" in
+    '-v')
+        shift
+        banner
+        exit
+        ;;
+    '-h')
+        shift
+        usage
+        exit
+        ;;
+    *)
+        break
+        ;;
+    esac
+done
 
 if [ "$#" -lt 1 ]; then
     usage

@@ -2,7 +2,12 @@
 unset IFS
 set -euf
 
-DEFAULT_TASK='lint'
+DEFAULT_TASK='test'
+
+test() {
+    nile -v
+    nile -h
+}
 
 audit() {
     snyk
