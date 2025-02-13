@@ -10,10 +10,11 @@ on: # yamllint disable-line rule:truthy
   # - cron: "*/5 * * * *"
   # Once a day
   - cron: "0 0 * * *"
+  workflow_dispatch:
 jobs:
   Test-Futureproof-OS:
     runs-on: "ubuntu-latest"
     steps:
-    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >> \"$GITHUB_PATH\""
     - uses: "actions/checkout@v4"
-    - run: "./build"
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >>\"$GITHUB_PATH\""
+    - run: "make"

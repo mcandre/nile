@@ -3,10 +3,11 @@ name: "Test"
 on: # yamllint disable-line rule:truthy
   push:
   pull_request:
+  workflow_dispatch:
 jobs:
   Test:
     runs-on: "ubuntu-24.04"
     steps:
-    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >> \"$GITHUB_PATH\""
     - uses: "actions/checkout@v4"
-    - run: "./build"
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >>\"$GITHUB_PATH\""
+    - run: "make"
