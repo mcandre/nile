@@ -9,6 +9,7 @@ all: go python rust
 
 go:
 	go install tool
+	go mod tidy
 
 python:
 	python3 -m venv .venv
