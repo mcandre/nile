@@ -37,12 +37,12 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
+* [GNU](https://www.gnu.org/) compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html)
 * If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
 * [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
-* [zip](https://linux.die.net/man/1/zip)
+* [zip](https://infozip.sourceforge.net/)
 
 # INSTALL
 
