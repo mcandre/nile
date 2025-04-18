@@ -4,7 +4,7 @@
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * [Ghostscript](https://www.ghostscript.com/)
 * [git](https://git-scm.com/) 2.46.1+
-* [Go](https://go.dev/) 1.24.1+
+* [Go](https://go.dev/) 1.24.2+
 * POSIX compatible [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
 * [Python](https://www.python.org/) 3.12.1+
 * [GNU readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
