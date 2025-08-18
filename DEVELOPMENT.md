@@ -6,7 +6,7 @@
 * [git](https://git-scm.com/) 2.46.1+
 * [Go](https://go.dev/) 1.24.5+
 * POSIX compatible [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
-* [Python](https://www.python.org/) 3.13.5+
+* [Python](https://www.python.org/) 3.13.7+
 * [GNU readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * [Rust](https://www.rust-lang.org/) 1.87.0+
 * [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [sh](https://en.wikipedia.org/wiki/Unix_shell)
