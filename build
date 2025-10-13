@@ -1,0 +1,84 @@
+#!/bin/bash
+unset IFS
+set -eufo pipefail
+
+audit() {
+    govulncheck
+    snyk
+}
+
+bashate() {
+    stank -print0 -exInterp zsh . |
+        xargs -0 -n 1 .venv/bin/bashate -i E006
+}
+
+funk() {
+    command funk .
+}
+
+govulncheck() {
+    command govulncheck -scan package ./...
+}
+
+lint() {
+    bashate
+    funk
+    shellcheck
+    shfmt
+    slick
+}
+
+shellcheck() {
+    stank -print0 -exInterp zsh . |
+        xargs -0 -n 1 shellcheck
+}
+
+shfmt() {
+    stank -print0 -exInterp zsh . |
+        xargs -0 -n 1 shfmt -w -i 4
+}
+
+slick() {
+    stank -print0 -sh . |
+        xargs -0 -n 1 slick
+}
+
+snyk() {
+    command snyk test --all-projects --exclude=requirements.txt
+    command snyk test --command=.venv/bin/python3
+}
+
+unit_test() {
+    nile -v
+    nile -h
+}
+
+TASKS=' \
+    audit \
+    bashate \
+    funk \
+    govulncheck \
+    lint \
+    shellcheck \
+    shfmt \
+    slick \
+    snyk \
+    unit_test'
+
+SELECTED_TASKS='unit_test'
+
+if [ "$#" -gt 0 ]; then
+    SELECTED_TASKS="$*"
+fi
+
+for TASK in $SELECTED_TASKS; do
+    case "$TASKS" in
+    *"$TASK"*)
+        "$TASK"
+        ;;
+    *)
+        echo "error: no such task: $TASK"
+        exit 1
+        ;;
+    esac
+done

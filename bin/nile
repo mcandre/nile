@@ -5,14 +5,14 @@ set -eufo pipefail
 NILE_VERSION='0.0.1'
 
 usage() {
-    echo "Usage: $0 [OPTIONS] <path>"
-    echo ""
-    echo "-v\tShow version info"
-    echo "-h\tShow usage menu"
+    printf "Usage: %s [OPTIONS] <path>\n" "$0"
+    printf "\n"
+    printf -- "-v\tShow version info\n"
+    printf -- "-h\tShow usage menu\n"
 }
 
 banner() {
-    echo "nile $NILE_VERSION"
+    printf "nile %s\n" "$NILE_VERSION"
 }
 
 while [ "$#" -ge 1 ]; do
