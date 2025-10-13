@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 unset IFS
-set -euf
+set -eufo pipefail
 
 #
 # Work around poor tidy-html5 exit code semantics

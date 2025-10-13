@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 unset IFS
-set -euf
+set -eufo pipefail
 
 NILE_VERSION='0.0.1'
 
