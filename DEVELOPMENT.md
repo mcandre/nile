@@ -6,7 +6,7 @@
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * [Ghostscript](https://www.ghostscript.com/)
 * [git](https://git-scm.com/) 2.46.1+
-* [Go](https://go.dev/) 1.24.6+
+* [Go](https://go.dev/) 1.25.3+
 * [Python](https://www.python.org/) 3.13.7+
 * [GNU readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * [ShellCheck](https://www.shellcheck.net/) 0.10.0+
