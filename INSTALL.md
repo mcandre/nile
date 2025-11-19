@@ -9,6 +9,10 @@
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://infozip.sourceforge.net/)
 
+## Recommended
+
+* a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
+
 # INSTALL
 
 1. Clone the project to a local directory.
