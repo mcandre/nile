@@ -4,7 +4,6 @@ set -eufo pipefail
 
 audit() {
     govulncheck
-    snyk
 }
 
 bashate() {
@@ -43,11 +42,6 @@ slick() {
         xargs -0 -n 1 slick
 }
 
-snyk() {
-    command snyk test --all-projects --dev --exclude=requirements.txt
-    command snyk test --command=.venv/bin/python3 --dev
-}
-
 unit_test() {
     nile -v
     nile -h
@@ -62,7 +56,6 @@ TASKS=' \
     shellcheck \
     shfmt \
     slick \
-    snyk \
     unit_test'
 
 SELECTED_TASKS='unit_test'

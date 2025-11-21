@@ -11,7 +11,6 @@
 * [Python](https://www.python.org/)
 * [GNU readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * [ShellCheck](https://www.shellcheck.net/) 0.11.0+
-* [Snyk](https://snyk.io/)
 * [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://infozip.sourceforge.net/)
