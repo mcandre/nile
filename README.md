@@ -63,3 +63,4 @@ For more information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT
 * [Pandoc](https://pandoc.org/), a file format converter
 * [Sigil](https://sigil-ebook.com/), an ebook editor
 * [tigris](https://github.com/mcandre/tigris), (Kindle) comic archival utilities
+* [todolint](https://github.com/mcandre/todolint), a software bug finder
