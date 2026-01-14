@@ -2,6 +2,8 @@
 unset IFS
 set -eufo pipefail
 
+VERSION=0.0.1
+
 audit() {
     govulncheck
 }
@@ -9,6 +11,19 @@ audit() {
 bashate() {
     stank -print0 -exInterp zsh . |
         xargs -0 -n 1 .venv/bin/bashate -i E006
+}
+
+docker_build() {
+	tuggy -t "n4jm4/nile:$VERSION" --load
+}
+
+docker_push() {
+	tuggy -t "n4jm4/nile:$VERSION" -a n4jm4/nile --push
+}
+
+docker_test() {
+	tuggy -t n4jm4/nile:test --load
+	tuggy -t n4jm4/nile:test --push
 }
 
 funk() {
@@ -50,6 +65,9 @@ unit_test() {
 TASKS=' \
     audit \
     bashate \
+	docker_build \
+	docker_push \
+	docker_test \
     funk \
     govulncheck \
     lint \
