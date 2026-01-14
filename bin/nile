@@ -2,7 +2,7 @@
 unset IFS
 set -eufo pipefail
 
-NILE_VERSION='0.0.1'
+NILE_VERSION='0.0.2'
 
 usage() {
     printf "Usage: %s [OPTIONS] <path>\n" "$0"
