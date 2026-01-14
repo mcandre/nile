@@ -1,5 +1,7 @@
 # nile: ebook normalizer
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/n4jm4/nile)](https://hub.docker.com/r/n4jm4/nile)
+
 # EXAMPLE
 
 ```console
