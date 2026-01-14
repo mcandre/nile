@@ -24,4 +24,5 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y shellcheck
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >>\"$GITHUB_PATH\""
     - run: "./build lint"

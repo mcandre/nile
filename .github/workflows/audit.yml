@@ -20,6 +20,7 @@ jobs:
     - uses: "dtolnay/rust-toolchain@stable"
       with:
         toolchain: "1.92.0"
+    - run: "echo \"${GITHUB_WORKSPACE}/bin\" >>\"$GITHUB_PATH\""
     - name: "provision dev tools"
       run: "make"
     - run: "./build audit"
