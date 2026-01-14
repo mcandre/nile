@@ -34,27 +34,9 @@ Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, b
 
 BSD-2-Clause
 
-# RUNTIME REQUIREMENTS
+# INSTALLATION
 
-* [bash](https://www.gnu.org/software/bash/) 4+
-* [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* [GNU](https://www.gnu.org/) compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
-* If the ebook filename, or any compressed entry filenames, contain non-ASCII runes, then the active shell interpreter encoding must support that encoding.
-* [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
-* [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
-* [zip](https://infozip.sourceforge.net/)
-
-## Recommended
-
-* a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
-
-# INSTALL
-
-For more information on installing or uninstalling nile, see [INSTALL.md](INSTALL.md).
-
-# CONTRIBUTING
-
-For more information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
+SEE [INSTALL.md](INSTALL.md).
 
 # SEE ALSO
 

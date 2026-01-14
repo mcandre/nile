@@ -3,6 +3,7 @@
 * a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
 * POSIX compatible [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
 * [bash](https://www.gnu.org/software/bash/) 4+
+* [Docker](https://www.docker.com/) 20.10.12+
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
 * [Ghostscript](https://www.ghostscript.com/)
 * [git](https://git-scm.com/) 2.46.1+

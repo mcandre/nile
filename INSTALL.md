@@ -1,4 +1,22 @@
-# INSTALLATION REQUIREMENTS
+# INSTALL
+
+We support multiple installation methods.
+
+# DOCKER
+
+## Requirements
+
+* [Docker](https://www.docker.com/) 20.10.12+
+
+## Instructions
+
+```sh
+docker pull n4jm4/nile
+```
+
+# NATIVE
+
+## Requirements
 
 * [bash](https://www.gnu.org/software/bash/) 4+
 * [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
@@ -9,11 +27,11 @@
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://infozip.sourceforge.net/)
 
-## Recommended
+### Recommended
 
 * a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
 
-# INSTALL
+## Instructions
 
 1. Clone the project to a local directory.
 
@@ -26,22 +44,7 @@ $ git clone https://github.com/mcandre/nile.git "$HOME/nile"
 For example, `$HOME/.bashrc` (bash):
 
 ```sh
-# ...
 export PATH="$PATH:$HOME/nile/bin"
 ```
 
-# UNINSTALL
-
-1. Remove .../nile/bin from `PATH`.
-
-For example, `$HOME/.bashrc` (bash):
-
-```sh
-# ...
-```
-
-2. Remove local clone directory.
-
-```console
-$ rm -rf "$HOME/nile"
-```
+For information on developing nile itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
