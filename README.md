@@ -1,6 +1,6 @@
 # nile: ebook normalizer
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/n4jm4/nile)](https://hub.docker.com/r/n4jm4/nile) [![Test](https://github.com/mcandre/nile/actions/workflows/test.yml/badge.svg)](https://github.com/mcandre/nile/actions/workflows/test.yml) [![license](https://img.shields.io/badge/license-BSD-3)](LICENSE.md) [![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/n4jm4/nile)](https://hub.docker.com/r/n4jm4/nile) [![Test](https://github.com/mcandre/nile/actions/workflows/test.yml/badge.svg)](https://github.com/mcandre/nile/actions/workflows/test.yml) [![Test-Futureproof-OS](https://github.com/mcandre/nile/actions/workflows/test-futureproof-os.yml/badge.svg)](https://github.com/mcandre/nile/actions/workflows/test-futureproof-os.yml) [![license](https://img.shields.io/badge/license-BSD-3)](LICENSE.md) [![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
 
 ![the nile viewed from orbit](nile.jpg)
 
