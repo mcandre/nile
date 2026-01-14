@@ -14,16 +14,16 @@ bashate() {
 }
 
 docker_build() {
-	tuggy -t "n4jm4/nile:$VERSION" --load
+    tuggy -t "n4jm4/nile:$VERSION" --load
 }
 
 docker_push() {
-	tuggy -t "n4jm4/nile:$VERSION" -a n4jm4/nile --push
+    tuggy -t "n4jm4/nile:$VERSION" -a n4jm4/nile --push
 }
 
 docker_test() {
-	tuggy -t n4jm4/nile:test --load
-	tuggy -t n4jm4/nile:test --push
+    tuggy -t n4jm4/nile:test --load
+    tuggy -t n4jm4/nile:test --push
 }
 
 funk() {
@@ -65,9 +65,9 @@ unit_test() {
 TASKS=' \
     audit \
     bashate \
-	docker_build \
-	docker_push \
-	docker_test \
+    docker_build \
+    docker_push \
+    docker_test \
     funk \
     govulncheck \
     lint \
