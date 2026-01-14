@@ -2,7 +2,7 @@
 unset IFS
 set -eufo pipefail
 
-VERSION=0.0.1
+VERSION="$(nile -v)"
 
 audit() {
     govulncheck

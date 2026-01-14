@@ -12,7 +12,7 @@ usage() {
 }
 
 banner() {
-    printf "nile %s\n" "$NILE_VERSION"
+    printf "%s\n" "$NILE_VERSION"
 }
 
 while [ "$#" -ge 1 ]; do
