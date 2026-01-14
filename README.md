@@ -1,6 +1,8 @@
 # nile: ebook normalizer
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/n4jm4/nile)](https://hub.docker.com/r/n4jm4/nile)
+![the nile viewed from orbit](nile.jpg)
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/n4jm4/nile)](https://hub.docker.com/r/n4jm4/nile) [![license](https://img.shields.io/badge/license-BSD-3)](LICENSE.md) [![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
 
 # EXAMPLE
 
@@ -22,8 +24,6 @@ nile normalizes ebooks. For example, Amazon Kindle ereaders often fail to render
 
 nile patches up common ePUB structural integrity quirks, for an easier reading experience.
 
-![the nile viewed from orbit](nile.jpg)
-
 # WARNINGS
 
 The ebook pages must not contain intensely bizarre oddities, such as a Unicode non-breaking space as a literal rune, or else the ebook may trigger a generic Amazon WhisperSync upload error. For example, the .(x)htm(l) files within the ebook will need to be able to render well in macOS Quick Look and Google Chrome, prior to any sanitization with nile.
@@ -31,10 +31,6 @@ The ebook pages must not contain intensely bizarre oddities, such as a Unicode n
 Some ebooks may present latent glitches, which can trigger when Calibre converting, such as after applying a custom book cover. This is due to oddities in how Calibre processes CSS.
 
 Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, but even that can't account for all possible ebook file corruption. Your mileage may vary.
-
-# LICENSE
-
-BSD-2-Clause
 
 # INSTALLATION
 
