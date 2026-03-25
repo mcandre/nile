@@ -1,54 +1,44 @@
-# BUILDTIME REQUIREMENTS
+# DEVELOPMENT
+
+We follow standard, `make` based commands for performing build operations.
+
+# DEV ENVIRONMENT
+
+## Prerequisites
 
 * a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
-* POSIX compatible [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
+* [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
 * [bash](https://www.gnu.org/software/bash/) 4+
-* [Docker](https://www.docker.com/) 20.10.12+
-* [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [findutils](https://en.wikipedia.org/wiki/Find_(Unix))
-* [Ghostscript](https://www.ghostscript.com/)
-* [git](https://git-scm.com/) 2.46.1+
+* [findutils](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/find.html)
 * [Go](https://go.dev/)
-* POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
-* [Python](https://www.python.org/)
-* [GNU readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
-* [Rust](https://www.rust-lang.org/en-US/)
+* [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
+* GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
 * [ShellCheck](https://www.shellcheck.net/) 0.11.0+
 * [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
 * [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
 * [zip](https://infozip.sourceforge.net/)
-* Provision additional dev tools with `make`
+* Provision additional dev tools with `make -f install.mk`
 
 ## Recommended
 
-* [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
-* [direnv](https://direnv.net/) 2
+* [asdf](https://asdf-vm.com/)
 
-# AUDIT
+## Postinstall
+
+Register .../bin to `PATH` environment variable.
+
+# TASKS
+
+We automate engineering tasks.
+
+## Security Audit
 
 ```sh
-./build audit
+make audit
 ```
 
-# LINT
+## Lint
 
 ```sh
-./build lint
-```
-
-# TEST
-
-```sh
-./build [unit_test]
-```
-
-# TEST DOCKER IMAGES
-
-```sh
-./build docker_test
-```
-
-# PUSH DOCKER IMAGES
-
-```sh
-./build docker_push
+make
 ```

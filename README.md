@@ -1,28 +1,56 @@
 # nile: ebook normalizer
 
-[![Test](https://github.com/mcandre/nile/actions/workflows/test.yml/badge.svg)](https://github.com/mcandre/nile/actions/workflows/test.yml) [![license](https://img.shields.io/badge/license-BSD-0)](LICENSE.md)
+[![Lint](https://github.com/mcandre/nile/actions/workflows/lint.yml/badge.svg)](https://github.com/mcandre/nile/actions/workflows/lint.yml) [![license](https://img.shields.io/badge/license-BSD-0)](LICENSE.md)
 
 ![the nile viewed from orbit](nile.jpg)
+
+# SUMMARY
+
+nile cleans up ebooks.
 
 # EXAMPLE
 
 ```console
-$ cd examples
+% cd examples
 
-$ nile shakespeare.epub
+% nile shakespeare.epub
 
-$ ls
+% ls
 shakespeare.epub
 shakespeare.normalized.epub
 ```
 
-See `nile -h` for more detail.
+For more options, run `nile -h`.
+
+# DOWNLOAD
+
+```
+git clone https://github.com/mcandre/nile.git ~/src/github.com/mcandre/nile
+```
+
+## Prerequisites
+
+* [bash](https://www.gnu.org/software/bash/) 4+
+* [findutils](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/find.html)
+* [git](https://git-scm.com/)
+* GNU compatible [readlink](https://www.gnu.org/software/coreutils/manual/html_node/readlink-invocation.html)
+* [tidy-html5](https://github.com/htacg/tidy-html5) 5.6+
+* [xmlstarlet](https://xmlstar.sourceforge.net/) 1.6.1+
+* [zip](https://infozip.sourceforge.net/)
+
+## Postinstall
+
+Register `"$HOME/src/github.com/mcandre/nile/bin` to `PATH` environment variable.
+
+For details on building from source, see [DEVELOPMENT](DEVELOPMENT.md).
 
 # ABOUT
 
-nile normalizes ebooks. For example, Amazon Kindle ereaders often fail to render smart (double-)quotes, apostrophes, em dashes, and other common Unicode runes properly. These can corrupt the displayed page, interrupting the natural flow of content.
+nile normalizes ebooks.
 
-nile patches up common ePUB structural integrity quirks, for an easier reading experience.
+Amazon Kindle ereaders often mishandle non-ASCII runes, such as smart quotes, apostrophes, em dashes, and other common Unicode sequences. Kindle visually corrupts the page, making it difficult to read books.
+
+nile fixes this problem, by standardizing ebooks into more portable contents.
 
 # WARNINGS
 
@@ -32,15 +60,10 @@ Some ebooks may present latent glitches, which can trigger when Calibre converti
 
 Some ebooks may not upload at all! We apply some `tidy` cleanup preprocessing, but even that can't account for all possible ebook file corruption. Your mileage may vary.
 
-# INSTALLATION
+# RESOURCES
 
-SEE [INSTALL.md](INSTALL.md).
+Prior art, personal plugs, and tools for managing digital content.
 
-# SEE ALSO
-
-* [bao](https://github.com/mcandre/bao), a PDF compressor
-* [Calibre](https://calibre-ebook.com/), a comprehensive personal ebook library manager
-* [Pandoc](https://pandoc.org/), a file format converter
-* [Sigil](https://sigil-ebook.com/), an ebook editor
-* [tigris](https://github.com/mcandre/tigris), (Kindle) comic archival utilities
-* [todolint](https://github.com/mcandre/todolint), a software bug finder
+* [Pandoc](https://pandoc.org/) - a file format converter
+* [Sigil](https://sigil-ebook.com/) - an ebook editor
+* [mcandre/tigris](https://github.com/mcandre/tigris) - (Kindle) comic archival utilities

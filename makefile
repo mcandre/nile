@@ -1,14 +1,34 @@
 .POSIX:
 .SILENT:
-.PHONY: all
+.PHONY: \
+	all \
+	audit \
+	govulncheck \
+	lint \
+	shellcheck \
+	shfmt \
+	slick
 
-all:
-	go install golang.org/x/vuln/cmd/govulncheck@latest
-	go install tool
-	go mod tidy
+all: lint
 
-	python3 -m venv .venv
-	.venv/bin/python3 -m pip install --upgrade pip setuptools
-	.venv/bin/python3 -m pip install -r requirements.txt
+audit: govulncheck
 
-	cargo install --force tuggy@0.0.29
+govulncheck:
+	govulncheck -scan package ./...
+
+lint: \
+	shellcheck \
+	shfmt \
+	slick
+
+shellcheck:
+	stank -print0 . | \
+		xargs -0 -n 1 shellcheck
+
+shfmt:
+	stank -print0 -exInterp zsh . | \
+		xargs -0 -n 1 shfmt -w -i 4
+
+slick:
+	stank -print0 -sh . | \
+		xargs -0 -n 1 slick
