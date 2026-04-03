@@ -2,9 +2,7 @@
 
 We follow standard, `make` based commands for performing build operations.
 
-# DEV ENVIRONMENT
-
-## Prerequisites
+# PREREQUISITES
 
 * a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
 * [awk](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html)
