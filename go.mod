@@ -1,4 +1,4 @@
-module github.com/mcandre/dotfiles
+module github.com/mcandre/nile
 
 go 1.26.1
 
