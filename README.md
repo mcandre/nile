@@ -24,7 +24,7 @@ For more options, run `nile -h`.
 
 # DOWNLOAD
 
-```
+```sh
 git clone https://github.com/mcandre/nile.git ~/src/github.com/mcandre/nile
 ```
 
