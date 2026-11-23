@@ -1,1 +1,4 @@
+*.mk linguist-vendored
+makefile linguist-vendored
+go.* linguist-vendored
 vendor/** linguist-vendored
